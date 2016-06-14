@@ -1,11 +1,13 @@
-* Docker, Chef and httpd PoC project
+# Docker, Chef and Apache PoC project
 
 Execute the Dockerfile to copy the centos image, modifies it, install and update apache and starts the httpd service:
 
+Build the docker image. Be sure that you are in the same pwd as is the Dockerfile
 ```
 sudo docker build --rm -t <imageID or imageName>  .
 ```
 
+Run the container:
 ```
 sudo docker run -d -p 80:80 -p 443:443 <imageID or imageName> 
 ```
@@ -21,7 +23,7 @@ Note that in order for us to configure apache, we are going to use the Apache2 c
 # Technology and implementation
 
 In this PoC project, the following different techniques have been used:
- - Borowing apache2 cookbooks and templates from the official chef supermarket and using them to configure the default http virtualhost
+ - Borrowing apache2 cookbooks and templates from the official chef supermarket and using them to configure the default http virtualhost
  - Creating custom file template and using it to enable and configure SSL 
- - Class: Chef::Util::FileEdit class to midify the file's content (http://www.rubydoc.info/gems/chef/Chef/Util/FileEdit).
+ - Class: Chef::Util::FileEdit class to modify the file's content (http://www.rubydoc.info/gems/chef/Chef/Util/FileEdit).
  - Other techniques like executing commands directly, appending to files from the console output and other chef operators 
