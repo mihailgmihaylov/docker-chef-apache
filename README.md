@@ -2,13 +2,19 @@
 
 Execute the Dockerfile to copy the centos image, modifies it, install and update apache and starts the httpd service:
 
-# sudo docker build --rm -t <imageID or imageName>  .
+```
+sudo docker build --rm -t <imageID or imageName>  .
+```
 
-# sudo docker run -d -p 80:80 -p 443:443 <imageID or imageName> 
+```
+sudo docker run -d -p 80:80 -p 443:443 <imageID or imageName> 
+```
 
 In order for you to observe what has been done on your container you can use the following command:
 
-# sudo docker run -i -t <imageID or imageName> /bin/bash 
+```
+sudo docker run -i -t <imageID or imageName> /bin/bash 
+```
 
 Note that in order for us to configure apache, we are going to use the Apache2 cookbook set from the official Chef supermarket: https://supermarket.chef.io/cookbooks/apache2
 
