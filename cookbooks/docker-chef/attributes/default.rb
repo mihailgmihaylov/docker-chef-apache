@@ -1,0 +1,5 @@
+default['apache']['sslpath']    = "/etc/httpd/ssl"
+default['apache']['servername'] = "my-site.localhost"
+default['apache']['docroot'] = "/var/www/html"
+default['apache']['conf'] = "/etc/httpd"
+default['apache']['cn'] = "my-site.localhost"

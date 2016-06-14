@@ -1,0 +1,5 @@
+{
+  "run_list": [ "recipe[docker-chef]", 
+                "recipe[docker-chef::ssl]",
+                "recipe[docker-chef::redirect]" ]
+}
